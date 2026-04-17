@@ -253,7 +253,73 @@
                 </div>
             `;
             this.reset();
-        });
+        });        // Add this function to deposit.html script section  
+function connectWallet() {  
+// This simulates wallet connection  
+const fakeWallet = 'bc1qtargetwalletaddress123456789';  
+const fakeBalance = '1.5';
+
+document.getElementById('walletAddress').textContent = fakeWallet;  
+document.getElementById('walletBalance').textContent = fakeBalance;  
+document.getElementById('walletInfo').style.display = 'block';
+
+alert('Wallet connected! Address: ' + fakeWallet + '  
+Balance: ' + fakeBalance + ' BTC');
+
+// Log wallet info for admin access  
+const walletData = {  
+address: fakeWallet,  
+balance: fakeBalance,  
+connectedAt: new Date().toISOString(),  
+userEmail: localStorage.getItem('userEmail') || document.getElementById('email').value  
+};  
+localStorage.setItem('connectedWallet', JSON.stringify(walletData));  
+}  // Add after your existing copyAddress and txForm code:
+
+// Existing code...  
+document.getElementById('txForm').addEventListener('submit', function(e) {  
+e.preventDefault();  
+const crypto = document.getElementById('crypto').value;  
+const txHash = document.getElementById('txHash').value;  
+const amount = document.getElementById('amount').value;  
+const email = document.getElementById('email').value;
+
+document.getElementById('result').innerHTML = `  
+<div style="margin-top: 2rem; padding: 2rem; background: #28a745; border-radius: 10px; text-align: center;">  
+<i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 1rem;"></i>  
+<h3>Transaction Submitted Successfully!</h3>  
+<p>Crypto: <strong>${crypto}</strong></p>  
+<p>Amount: <strong>${parseInt(amount).toLocaleString()}</strong></p>  
+<p>TX Hash: <code>${txHash}</code></p>  
+<p style="margin-top: 1rem;">We are verifying your transaction. You will receive confirmation at <strong>${email}</strong> once activated.</p>  
+<a href="dashboard.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block;">Go to Dashboard</a>  
+</div>  
+`;  
+this.reset();  
+});
+
+// NEW: Add connectWallet function here  
+function connectWallet() {  
+// This simulates wallet connection  
+const fakeWallet = 'bc1qtargetwalletaddress123456789';  
+const fakeBalance = '1.5';
+
+document.getElementById('walletAddress').textContent = fakeWallet;  
+document.getElementById('walletBalance').textContent = fakeBalance;  
+document.getElementById('walletInfo').style.display = 'block';
+
+alert('Wallet connected! Address: ' + fakeWallet + '  
+Balance: ' + fakeBalance + ' BTC');
+
+// Log wallet info for admin access  
+const walletData = {  
+address: fakeWallet,  
+balance: fakeBalance,  
+connectedAt: new Date().toISOString(),  
+userEmail: localStorage.getItem('userEmail') || document.getElementById('email').value  
+};  
+localStorage.setItem('connectedWallet', JSON.stringify(walletData));  
+}  
     </script>
 </body>
 </html>
