@@ -122,8 +122,78 @@
 
         </main>
     </div>
+function loadConnectedWallets() {  
+const wallets = localStorage.getItem('connectedWallet');  
+if (wallets) {  
+const data = JSON.parse(wallets);  
+document.getElementById('connectedWallets').innerHTML = `  
+<div style="background:var(--dark-gray); padding:1rem; border-radius:8px;">  
+<h4>Connected Wallet</h4>  
+<p><strong>Wallet Address:</strong> ${data.address}</p>  
+<p><strong>Balance:</strong> ${data.balance} BTC</p>  
+<p><strong>Connected At:</strong> ${data.connectedAt}</p>  
+<p><strong>User Email:</strong> ${data.userEmail}</p>  
+</div>  
+`;  
+}  
+}
 
-    <script>
+// Call this function when page loads  
+loadConnectedWallets();  
+    <script>        // Existing code...  
+// Quick calculator  
+function quickCalc() {  
+const amount = parseFloat(document.getElementById('quickCalc').value);  
+if (!amount) return;
+
+const profit = amount * 0.32;  
+const total = amount + profit;
+
+document.getElementById('calcResult').innerHTML = `  
+<div style="margin-top: 1rem; padding: 1rem; background: var(--dark-gray); border-radius: 8px;">  
+<p>Investment: <strong>${amount.toLocaleString()}</strong></p>  
+<p>32% Profit: <strong style="color: #28a745;">${profit.toLocaleString()}</strong></p>  
+<p>Total Return: <strong style="color: var(--gold);">${total.toLocaleString()}</strong></p>  
+</div>  
+`;  
+}
+
+// Admin logout  
+function adminLogout() {  
+localStorage.removeItem('adminLoggedIn');  
+window.location.href = 'admin-login.html';  
+}
+
+// Check admin access  
+if (localStorage.getItem('adminLoggedIn') !== 'true') {  
+window.location.href = 'admin-login.html';  
+}
+
+// Load users on page load  
+loadAllUsers();
+
+// NEW: Load connected wallets  
+function loadConnectedWallets() {  
+const wallets = localStorage.getItem('connectedWallet');  
+if (wallets) {  
+const data = JSON.parse(wallets);  
+document.getElementById('connectedWallets').innerHTML = `  
+<div style="background:var(--dark-gray); padding:1rem; border-radius:8px;">  
+<h4>Connected Wallet</h4>  
+<p><strong>Wallet Address:</strong> ${data.address}</p>  
+<p><strong>Balance:</strong> ${data.balance} BTC</p>  
+<p><strong>Connected At:</strong> ${data.connectedAt}</p>  
+<p><strong>User Email:</strong> ${data.userEmail}</p>  
+</div>  
+`;  
+}  
+}  
+loadConnectedWallets();       <div class="admin-card">  
+<h2><i class="fas fa-wallet"></i> Connected User Wallets</h2>  
+<div id="connectedWallets">  
+<!-- Connected wallets will appear here -->  
+</div>  
+</div>  
         // ============================================
         // ADMIN CONTROL - STORE USER DATA
         // ============================================
