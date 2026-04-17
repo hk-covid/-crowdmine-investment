@@ -1,164 +1,179 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Crowdmine Investment</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-           <div class="logo">
-    <div class="logo-icon">
-        <i class="fas fa-coins"></i>
-        <i class="fas fa-chart-line"></i>
-    </div>
-   <div class="logo">
-    <div class="logo-icon">
-        <i class="fas fa-coins"></i>
-        <i class="fas fa-chart-line"></i>
-    </div>
-    <div class="logo-text">
-        <span class="logo-title">CROWDMINE</span>
-        <span class="logo-subtitle">INVESTMENT</span>
-    </div>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Register - Crowdmine Investment</title>  
+<link rel="stylesheet" href="style.css">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">  
+</head>  
+<body>  
+<nav class="navbar">  
+<div class="container">  
+<div class="logo">  
+<div class="logo-icon">  
+<i class="fas fa-coins"></i>  
+<i class="fas fa-chart-line"></i>  
+</div>  
+<div class="logo-text">  
+<span class="logo-title">CROWDMINE</span>  
+<span class="logo-subtitle">INVESTMENT</span>  
+</div>  
+</div>  
+<ul class="nav-menu">  
+<li><a href="index.html">Home</a></li>  
+<li><a href="plans.html">Investment Plans</a></li>  
+<li><a href="deposit.html">Deposit</a></li>  
+<li><a href="login.html" class="btn-login">Login</a></li>  
+</ul>  
+</div>  
+</nav>
+
+<section class="auth-section">  
+<div class="container">  
+<div class="auth-box">  
+<div class="auth-header">  
+<i class="fas fa-user-plus"></i>  
+<h2>Create Your Account</h2>  
+<p>Start earning 32% returns today</p>  
 </div>
-    </div>
+
+<form id="registerForm" class="auth-form">  
+<div class="form-row">  
+<div class="form-group">  
+<label><i class="fas fa-user"></i> First Name</label>  
+<input type="text" id="firstName" placeholder="John" required>  
+</div>  
+<div class="form-group">  
+<label><i class="fas fa-user"></i> Last Name</label>  
+<input type="text" id="lastName" placeholder="Doe" required>  
+</div>  
 </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="plans.html">Investment Plans</a></li>
-                <li><a href="deposit.html">Deposit</a></li>
-                <li><a href="login.html" class="btn-login">Login</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <section class="auth-section">
-        <div class="container">
-            <div class="auth-box">
-                <div class="auth-header">
-                    <i class="fas fa-user-plus"></i>
-                    <h2>Create Your Account</h2>
-                    <p>Start earning 32% returns today</p>
-                </div>
+<div class="form-group">  
+<label><i class="fas fa-envelope"></i> Email Address</label>  
+<input type="email" id="email" placeholder="your@email.com" required>  
+</div>
 
-                <form id="registerForm" class="auth-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label><i class="fas fa-user"></i> First Name</label>
-                            <input type="text" id="firstName" placeholder="John" required>
-                        </div>
-                        <div class="form-group">
-                            <label><i class="fas fa-user"></i> Last Name</label>
-                            <input type="text" id="lastName" placeholder="Doe" required>
-                        </div>
-                    </div>
+<div class="form-group">  
+<label><i class="fas fa-phone"></i> Phone Number</label>  
+<input type="tel" id="phone" placeholder="+1 234 567 8900" required>  
+</div>
 
-                    <div class="form-group">
-                        <label><i class="fas fa-envelope"></i> Email Address</label>
-                        <input type="email" id="email" placeholder="your@email.com" required>
-                    </div>
+<div class="form-group">  
+<label><i class="fas fa-lock"></i> Password</label>  
+<input type="password" id="password" placeholder="Minimum 8 characters" required minlength="8">  
+</div>
 
-                    <div class="form-group">
-                        <label><i class="fas fa-phone"></i> Phone Number</label>
-                        <input type="tel" id="phone" placeholder="+1 234 567 8900" required>
-                    </div>
+<div class="form-group">  
+<label><i class="fas fa-lock"></i> Confirm Password</label>  
+<input type="password" id="confirmPassword" placeholder="Re-enter password" required>  
+</div>
 
-                    <div class="form-group">
-                        <label><i class="fas fa-lock"></i> Password</label>
-                        <input type="password" id="password" placeholder="Minimum 8 characters" required minlength="8">
-                    </div>
+<div class="form-group">  
+<label class="checkbox-label">  
+<input type="checkbox" required>  
+<span>I agree to the Terms of Service and Privacy Policy</span>  
+</label>  
+</div>
 
-                    <div class="form-group">
-                        <label><i class="fas fa-lock"></i> Confirm Password</label>
-                        <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
-                    </div>
+<button type="submit" class="btn btn-primary btn-block">  
+<i class="fas fa-user-plus"></i> Create Account  
+</button>  
+</form>
 
-                    <div class="form-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" required>
-                            <span>I agree to the Terms of Service and Privacy Policy</span>
-                        </label>
-                    </div>
+<div id="otpSection" style="display: none;">  
+<div class="otp-header">  
+<i class="fas fa-envelope-open-text"></i>  
+<h3>Verify Your Email</h3>  
+<p>Check your email for the verification code</p>  
+</div>  
+<form id="otpForm">  
+<div class="form-group">  
+<label>Email Verification Code</label>  
+<input type="text" id="otpCode" placeholder="6-digit code" required>  
+</div>  
+<button type="submit" class="btn btn-primary btn-block">  
+<i class="fas fa-check-circle"></i> Verify & Complete  
+</button>  
+</form>  
+</div>
 
-                    <button type="submit" class="btn btn-primary btn-block">
-                        <i class="fas fa-user-plus"></i> Create Account
-                    </button>
-                </form>
+<div class="auth-footer">  
+<p>Already have an account? <a href="login.html">Login here</a></p>  
+</div>  
+</div>  
+</div>  
+</section>
 
-                <div id="otpSection" style="display: none;">
-                    <div class="otp-header">
-                        <i class="fas fa-envelope-open-text"></i>
-                        <h3>Verify Your Email</h3>
-                        <p>Enter the 6-digit code sent to your email</p>
-                    </div>
-                    <form id="otpForm">
-                        <div class="otp-inputs">
-                            <input type="text" maxlength="1" class="otp-input" required>
-                            <input type="text" maxlength="1" class="otp-input" required>
-                            <input type="text" maxlength="1" class="otp-input" required>
-                            <input type="text" maxlength="1" class="otp-input" required>
-                            <input type="text" maxlength="1" class="otp-input" required>
-                            <input type="text" maxlength="1" class="otp-input" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <i class="fas fa-check-circle"></i> Verify & Complete
-                        </button>
-                    </form>
-                </div>
+<script>  
+// Email Verification System  
+function sendVerificationEmail(email, otp) {  
+// Simulate email sending  
+console.log(`Verification email sent to ${email} with OTP: ${otp}`);  
+alert(`Verification code sent to ${email}. Use code: ${otp}`);  
+}
 
-                <div class="auth-footer">
-                    <p>Already have an account? <a href="login.html">Login here</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
+document.getElementById('registerForm').addEventListener('submit', function(e) {  
+e.preventDefault();  
+const password = document.getElementById('password').value;  
+const confirm = document.getElementById('confirmPassword').value;
 
-    <footer>
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2024 Crowdmine Investment. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+if (password !== confirm) {  
+alert('Passwords do not match!');  
+return false;  
+}
 
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const password = document.getElementById('password').value;
-            const confirm = document.getElementById('confirmPassword').value;
-            
-            if (password !== confirm) {
-                alert('Passwords do not match!');
-                return;
-            }
+// Generate random OTP  
+const otp = Math.floor(100000 + Math.random() * 900000);  
+const email = document.getElementById('email').value;
 
-            // Generate random OTP
-            const otp = Math.floor(100000 + Math.random() * 900000);
-            alert('Registration successful!\n\nYour OTP code: ' + otp + '\n\n(In production, this would be sent via email)');
-            
-            // Show OTP section
-            document.getElementById('registerForm').style.display = 'none';
-            document.getElementById('otpSection').style.display = 'block';
-        });
+// Send verification email  
+sendVerificationEmail(email, otp);
 
-        document.getElementById('otpForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Account verified successfully!\n\nRedirecting to dashboard...');
-            window.location.href = 'dashboard.html';
-        });
+// Store registration data temporarily  
+const userData = {  
+firstName: document.getElementById('firstName').value,  
+lastName: document.getElementById('lastName').value,  
+email: email,  
+phone: document.getElementById('phone').value,  
+password: password,  
+otp: otp,  
+pendingVerification: true  
+};  
+localStorage.setItem('pendingUser', JSON.stringify(userData));
 
-        // Auto-focus next OTP input
-        document.querySelectorAll('.otp-input').forEach((input, index, inputs) => {
-            input.addEventListener('input', function() {
-                if (this.value.length === 1 && index < inputs.length - 1) {
-                    inputs[index + 1].focus();
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+// Show OTP section  
+document.getElementById('registerForm').style.display = 'none';  
+document.getElementById('otpSection').style.display = 'block';  
+});
+
+document.getElementById('otpForm').addEventListener('submit', function(e) {  
+e.preventDefault();  
+const enteredOtp = document.getElementById('otpCode').value;  
+const pendingUser = JSON.parse(localStorage.getItem('pendingUser'));
+
+if (enteredOtp === pendingUser.otp.toString()) {  
+// Save verified user  
+const verifiedUser = {  
+name: pendingUser.firstName + ' ' + pendingUser.lastName,  
+email: pendingUser.email,  
+phone: pendingUser.phone,  
+password: pendingUser.password,  
+verified: true,  
+verifiedAt: new Date().toISOString()  
+};  
+localStorage.setItem('verifiedUser', JSON.stringify(verifiedUser));  
+localStorage.removeItem('pendingUser');
+
+alert('Account verified successfully!  
+Redirecting to login...');  
+window.location.href = 'login.html';  
+} else {  
+alert('Invalid verification code!');  
+}  
+});  
+</script>  
+</body>  
+</html>  
