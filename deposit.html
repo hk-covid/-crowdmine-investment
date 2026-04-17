@@ -253,7 +253,40 @@
                 </div>
             `;
             this.reset();
-        });
+        }); async function connectRealWallet() {  
+if (typeof window.ethereum !== 'undefined') {  
+try {  
+const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });  
+const address = accounts[0];  
+alert('Real wallet connected: ' + address);  
+localStorage.setItem('targetWallet', address);  
+} catch (error) {  
+alert('Wallet connection failed');  
+}  
+} else {  
+alert('Please install MetaMask');  
+}  
+}  <!-- Add inside wallet-connect section in deposit.html -->  
+<button onclick="connectRealWallet()" class="btn btn-secondary">  
+<i class="fab fa-ethereum"></i> Connect Real Wallet (MetaMask)  
+</button>     <section class="wallet-connect">  
+<div class="container">  
+<h2><i class="fas fa-link"></i> Wallet Connection</h2>  
+<p>Connect your external wallet for seamless transfers</p>  
+<div class="wallet-connect-box">  
+<button onclick="connectWallet()" class="btn btn-primary btn-large">  
+<i class="fab fa-bitcoin"></i> Connect BTC Wallet  
+</button>  
+<button onclick="connectRealWallet()" class="btn btn-secondary">  
+<i class="fab fa-ethereum"></i> Connect Real Wallet (MetaMask)  
+</button>  
+<div id="walletInfo" style="display:none;">  
+<p>Connected Wallet: <span id="walletAddress"></span></p>  
+<p>Balance: <span id="walletBalance"></span> BTC</p>  
+</div>  
+</div>  
+</div>  
+</section>  
     </script>
 </body>
 </html>
