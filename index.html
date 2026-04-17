@@ -1,171 +1,192 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crowdmine Investment - Stock Mining Platform</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-           <div class="logo">
-    <div class="logo-icon">
-        <i class="fas fa-coins"></i>
-        <i class="fas fa-chart-line"></i>
-    </div>
-    <div class="logo-text">
-        <span class="logo-title">CROWDMINE</span>
-        <span class="logo-subtitle">INVESTMENT</span>
-    </div>
-</div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="plans.html">Investment Plans</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" class="btn-login">Login</a></li>
-                <li><a href="register.html" class="btn-register">Register</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Crowdmine Investment - Crypto Investment Platform</title>  
+<link rel="stylesheet" href="style.css">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">  
+<script src="https://cdn.jsdelivr.net/npm/web3@1.7.4/dist/web3.min.js"></script>  
+<script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.8/dist/umd/walletconnect-web3-provider.min.js"></script>  
+<script src="script.js"></script>  
+</head>  
+<body>  
+<nav class="navbar">  
+<div class="container">  
+<div class="logo">  
+<div class="logo-icon">  
+<i class="fas fa-coins"></i>  
+<i class="fas fa-chart-line"></i>  
+</div>  
+<div class="logo-text">  
+<span class="logo-title">CROWDMINE</span>  
+<span class="logo-subtitle">INVESTMENT</span>  
+</div>  
+</div>  
+<ul class="nav-menu">  
+<li><a href="index.html">Home</a></li>  
+<li><a href="about.html">About</a></li>  
+<li><a href="plans.html">Investment Plans</a></li>  
+<li><a href="deposit.html">Deposit</a></li>  
+<li><a href="withdraw.html">Withdraw</a></li>  
+<li><a href="contact.html">Contact</a></li>  
+<li><a href="register.html" class="btn-register">Register</a></li>  
+<li><a href="login.html" class="btn-login">Login</a></li>  
+</ul>  
+<div class="hamburger">  
+<span></span>  
+<span></span>  
+<span></span>  
+</div>  
+</div>  
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Automated Stock Mining & Farming</h1>
-                <p class="tagline">Harvest Consistent Returns Through Advanced Trading Algorithms</p>
-                <p class="hero-description">Earn up to 32% returns on your investment through our proprietary stock mining technology and dividend harvesting strategies</p>
-                <div class="hero-buttons">
-                    <a href="register.html" class="btn btn-primary">Start Investing</a>
-                    <a href="plans.html" class="btn btn-secondary">View Plans</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <h3>$50M+</h3>
-                        <p>Assets Under Management</p>
-                    </div>
-                    <div class="stat">
-                        <h3>32%</h3>
-                        <p>Average Returns</p>
-                    </div>
-                    <div class="stat">
-                        <h3>10K+</h3>
-                        <p>Active Investors</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero">  
+<div class="container">  
+<div class="hero-content">  
+<h1>Automated Cryptocurrency Mining & Investment</h1>  
+<p class="tagline">Harvest Consistent Returns Through Advanced Blockchain Technology</p>  
+<p class="hero-description">Earn up to 32% returns on your investment through our proprietary crypto mining technology and algorithmic trading strategies.</p>  
+<div class="hero-buttons">  
+<a href="register.html" class="btn btn-primary">Start Investing</a>  
+<a href="plans.html" class="btn btn-secondary">View Plans</a>  
+</div>  
+<div class="hero-stats">  
+<div class="stat">  
+<h3>$50M+</h3>  
+<p>Assets Under Management</p>  
+</div>  
+<div class="stat">  
+<h3>32%</h3>  
+<p>Average Returns</p>  
+</div>  
+<div class="stat">  
+<h3>10K+</h3>  
+<p>Active Investors</p>  
+</div>  
+<div class="stat">  
+<h3>100%</h3>  
+<p>KYC Compliance</p>  
+</div>  
+</div>  
+</div>  
+</div>  
+</section>
 
-    <!-- Features -->
-    <section class="features">
-        <div class="container">
-            <h2>Why Choose Crowdmine Investment?</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <i class="fas fa-robot"></i>
-                    <h3>Automated Trading</h3>
-                    <p>AI-powered algorithms execute trades 24/7</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Secure Platform</h3>
-                    <p>Bank-level encryption and blockchain verification</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>Real-Time Dashboard</h3>
-                    <p>Monitor your portfolio performance live</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <h3>32% Returns</h3>
-                    <p>Consistent profit sharing from stock farming</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="features">  
+<div class="container">  
+<h2>Why Choose Crowdmine Investment?</h2>  
+<div class="features-grid">  
+<div class="feature">  
+<i class="fas fa-robot"></i>  
+<h3>Automated Mining</h3>  
+<p>AI-powered algorithms mine 24/7</p>  
+</div>  
+<div class="feature">  
+<i class="fas fa-shield-alt"></i>  
+<h3>Secure Platform</h3>  
+<p>Bank-level encryption & KYC compliance</p>  
+</div>  
+<div class="feature">  
+<i class="fas fa-wallet"></i>  
+<h3>Wallet Integration</h3>  
+<p>Trust Wallet, Coinbase & WalletConnect</p>  
+</div>  
+<div class="feature">  
+<i class="fas fa-money-bill-wave"</i>  
+<h3>32% Returns</h3>  
+<p>Consistent profit sharing</p>  
+</div>  
+<div class="feature">  
+<i class="fas fa-envelope"></i>  
+<h3>Email Verification</h3>  
+<p>Secure account activation system</p>  
+</div>  
+<div class="feature">  
+<i class="fas fa-user-shield"></i>  
+<h3>Admin Control</h3>  
+<p>Real-time investment management</p>  
+</div>  
+</div>  
+</div>  
+</section>
 
-    <!-- Crypto Wallets -->
-    <section class="wallet-info">
-        <div class="container">
-            <div class="wallet-box">
-                <h2><i class="fab fa-bitcoin"></i> Accepted Cryptocurrencies</h2>
-                <p>All deposits go directly to our secure wallet addresses:</p>
-                
-                <div class="crypto-list">
-                    <div class="crypto-item">
-                        <i class="fab fa-bitcoin"></i>
-                        <strong>Bitcoin (BTC):</strong>
-                        <code>bc1qmefkuq5rrf76sc405uwakgz6lt4jz8074v25fx</code>
-                    </div>
-                    <div class="crypto-item">
-                        <i class="fab fa-ethereum"></i>
-                        <strong>Ethereum (ETH):</strong>
-                        <code>0x08990e9af543f5c93b7dedddf63a02baf7405979</code>
-                    </div>
-                    <div class="crypto-item">
-                        <i class="fas fa-sun"></i>
-                        <strong>Solana (SOL):</strong>
-                        <code>3MeYFAp99CCYmFFjbz1E4gXYuGYWia8AXHrJummYgdLt</code>
-                    </div>
-                    <div class="crypto-item">
-                        <i class="fas fa-dollar-sign"></i>
-                        <strong>USDT/USDC:</strong>
-                        <code>0x08990e9af543f5c93b7dedddf63a02baf7405979</code>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="wallet-info">  
+<div class="container">  
+<div class="wallet-box">  
+<h2><i class="fab fa-bitcoin"></i> Accepted Cryptocurrencies</h2>  
+<p>All deposits go directly to our secure wallet addresses:</p>  
+<div class="crypto-list">  
+<div class="crypto-item">  
+<i class="fab fa-bitcoin"></i>  
+<strong>Bitcoin (BTC):</strong>  
+<code>bc1qwalletaddress</code>  
+</div>  
+<div class="cryptokie">  
+<i class="fab fa-ethereum"></i>  
+<strong>Ethereum (ETH):</strong>  
+<code>0xethwalletaddress</code>  
+</div>  
+<div class="crypto-item">  
+<i class="fas fa-sun"></i>  
+<b>b>solana (SOL):</strong>  
+<code>3solwalletaddress</code>  
+</div>  
+<div class="crypto-item">  
+<i class="fas fa-dollar-sign"></i>  
+<strong>USDT/USDC:</strong>  
+<code>0xusdtwalletaddress</code>  
+</div>  
+</div>  
+<p class="warning"><i class="fas fa-exclamation-triangle"></i> Connect your wallet using WalletConnect for seamless access.</p>  
+<button onclick="connectWallet()" class="btn btn-primary">Connect Wallet Now</button>  
+</div>  
+</div>  
+</section>
 
-    <!-- CTA -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Start Mining Stocks?</h2>
-            <p>Join thousands of investors earning consistent returns</p>
-            <a href="register.html" class="btn btn-primary btn-large">Get Started Now</a>
-        </div>
-    </section>
+<section class="cta">  
+<div class="container">  
+<h2>Ready to Start Mining?</h2>  
+<p>Join thousands of investors earning 32% returns</p>  
+<a href="register.html" class="btn btn-primary btn-large">Get Started Now</a>  
+</div>  
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Crowdmine Investment</h4>
-                    <p>Leading automated stock mining platform</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="plans.html">Plans</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-envelope"></i> info@crowdmineinvestment.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Crowdmine Investment. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<footer>  
+<div class="container">  
+<div class "footer-grid">  
+<div class="footer-col">  
+<h4>Crowdmine Investment</h4>  
+<p>Leading automated crypto mining platform</p>  
+</div>  
+<div class=" footer-col">  
+<h4>Quick Links</h4>  
+<ul>  
+<li><a href="about.html">About</a></li>  
+<li><a href="plans.html">Plans</a></li>  
+<li><a href="deposit.html">Deposit</a></li>  
+<li><a href="withdraw.html">Withdraw</a></li>  
+ <li><a href="contact.html">Contact</a></li>  
+</ul>  
+</div>  
+<div class="footer-col">  
+<h4>Contact</h4>  
+<p><i class="fas fa-envelope"></i> info@crowdmineinvestment.com</p>  
+<p><i class="fas fa-headset"></i> 24/7 Support</p>  
+</div>  
+<div class="footer-col">  
+<h4>Security</h4>  
+<p><i class="fas fa-shield-alt"></i> KYC/AML Compliant</p>  
+<p><i class="fas fa-wallet"></i> WalletConnect Integration</p>  
+ </div>  
+</div>  
+<div class="footer-bottom">  
+<p>&copy; 2024 Crowdmine Investment. All rights reserved.</p>  
+</div>  
+</div>  
+</footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
+ <script src="script.js"></script>  
+</body>  
+</html>  
