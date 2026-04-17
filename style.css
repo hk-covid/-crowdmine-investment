@@ -1330,3 +1330,18 @@ footer {
         height: 50px;
     }
 }
+/* Add to style.css */  
+.wallet-connect {  
+padding: 60px 0;  
+background: var(--black);  
+text-align: center;  
+}
+
+.wallet-connect-box {  
+max-width: 500px;  
+margin: 0 auto;  
+background: var(--dark-gray);  
+padding: 2rem;  
+border-radius: 10px;  
+border: 2px solid var(--gold);  
+}  
