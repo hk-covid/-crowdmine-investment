@@ -1,190 +1,402 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Crowdmine Investment</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Dashboard - Crowdmine Investment</title>  
+<link rel="stylesheet" href="style.css">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+<script src="script.js"></script>  
+</head>  
 <body class="dashboard-body">
-    
-    <nav class="dashboard-nav">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-chart-line"></i>
-                <span>Crowdmine Investment</span>
-            </div>
-            <div class="user-menu">
-                <span id="userName">John Doe</span>
-                <button onclick="logout()" class="btn-logout">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </button>
-            </div>
-        </div>
-    </nav>
 
-    <div class="dashboard-container">
-        <aside class="sidebar">
-            <ul class="sidebar-menu">
-                <li class="active">
-                    <a href="dashboard.html">
-                        <i class="fas fa-home"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="deposit.html">
-                        <i class="fas fa-wallet"></i>
-                        <span>Deposit</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="plans.html">
-                        <i class="fas fa-chart-pie"></i>
-                        <span>Investment Plans</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html">
-                        <i class="fas fa-home"></i>
-                        <span>Back to Home</span>
-                    </a>
-                </li>
-            </ul>
-        </aside>
+<nav class="dashboard-nav">  
+<div class="container">  
+<div class="logo">  
+<i class="fas fa-chart-line"></i>  
+<span>Crowdmine Investment</span>  
+</div>  
+<div class="user-menu">  
+<span id="userName">User</span>  
+<button onclick="logout()" class="btn-logout">  
+<i class="fas fa-sign-out-alt"></i> Logout  
+</button>  
+</div>  
+</div>  
+</nav>
 
-        <main class="dashboard-main">
-            <div class="welcome-banner">
-                <h1>Welcome back! 👋</h1>
-                <p>Here's your investment overview</p>
-            </div>
+<div class="dashboard-container">  
+<aside class="sidebar">  
+<ul class="sidebar-menu">  
+<li class="active">  
+<a href="dashboard.html">  
+<i class="fas fa-home"></i>  
+<span>Dashboard</span>  
+</a>  
+</li>  
+<li>  
+<a href="deposit.html">  
+<i class="fas fa-wallet"></i>  
+<span>Deposit</span>  
+</a>  
+</li>  
+<li>  
+<a href="plans.html">  
+<i class="fas fa-chart-pie"></i>  
+<span>Investment Plans</span>  
+</a>  
+</li>  
+<li>  
+<a href="withdraw.html">  
+<i class="fas fa-hand-holding-usd"></i>  
+<span>Withdraw</span>  
+</a>  
+</li>  
+<li>  
+<a href="index.html">  
+<i class="fas fa-home"></i>  
+<span>Back to Home</span>  
+</a>  
+</li>  
+</ul>  
+</aside>
 
-            <div class="balance-cards">
-                <div class="balance-card primary">
-                    <div class="card-icon">
-                        <i class="fas fa-wallet"></i>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-label">Total Balance</p>
-                        <h2 class="card-value" id="totalBalance">$0.00</h2>
-                        <span class="card-subtext">Available funds</span>
-                    </div>
-                </div>
+<main class="dashboard-main">  
+<div class="welcome-banner">  
+<h1>Welcome back! 👋</h1>  
+<p>Here's your investment overview</p>  
+</div>
 
-                <div class="balance-card success">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-label">Total Invested</p>
-                        <h2 class="card-value" id="totalInvested">$0.00</h2>
-                        <span class="card-subtext">Active capital</span>
-                    </div>
-                </div>
+<div class="balance-cards">  
+<div class="balance-card primary">  
+<div class="card-icon">  
+<i class="fas fa-wallet"></i>  
+</div>  
+<div class="card-content">  
+<p class="card-label">Total Balance</p>  
+<h2 class="card-value" id="totalBalance">$0.00</h2>  
+<span class="card-subtext">Available funds</span>  
+</div>  
+</div>
 
-                <div class="balance-card warning">
-                    <div class="card-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-label">Total Profit</p>
-                        <h2 class="card-value" id="totalProfit">$0.00</h2>
-                        <span class="card-subtext positive">+32% ROI</span>
-                    </div>
-                </div>
+<div class="balance-card success">  
+<div class="card-icon">  
+<i class="fas fa-chart-line"></i>  
+</div>  
+<div class="card-content">  
+<p class="card-label">Total Invested</p>  
+<h2 class="card-value" id="totalInvested">$0.00</h2>  
+<span class="card-subtext">Active capital</span>  
+</div>  
+</div>
 
-                <div class="balance-card info">
-                    <div class="card-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <div class="card-content">
-                        <p class="card-label">Withdrawable</p>
-                        <h2 class="card-value" id="withdrawable">$0.00</h2>
-                        <span class="card-subtext">Ready to withdraw</span>
-                    </div>
-                </div>
-            </div>
+<div class="balance-card warning">  
+<div class="card-icon">  
+<i class="fas fa-dollar-sign"></i>  
+</div>  
+<div class="card-content">  
+<p class="card-label">Total Profit</p>  
+<h2 class="card-value" id="totalProfit">$0.00</h2>  
+<span class="card-subtext positive">+32% ROI</span>  
+</div>  
+</div>
 
-            <div class="dashboard-card">
-                <div class="card-header">
-                    <h3><i class="fas fa-chart-pie"></i> Active Investments</h3>
-                    <a href="deposit.html" class="btn btn-primary">
-                        <i class="fas fa-plus"></i> New Investment
-                    </a>
-                </div>
-                <div id="investmentsList">
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No active investments yet</p>
-                        <a href="deposit.html" class="btn btn-primary">Make Your First Deposit</a>
-                    </div>
-                </div>
-            </div>
+<div class="balance-card info">  
+<div class="card-icon">  
+<i class="fas fa-hand-holding-usd"></i>  
+</div>  
+<div class="card-content">  
+<p class="card-label">Withdrawable</p>  
+<h2 class="card-value" id="withdrawable">$0.00</h2>  
+<span class="card-subtext">Ready to withdraw</span>  
+</div>  
+</div>  
+</div>
 
-            <div class="quick-actions">
-                <h3>Quick Actions</h3>
-                <div class="actions-grid">
-                    <a href="deposit.html" class="action-card">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>Make Deposit</span>
-                    </a>
-                    <a href="plans.html" class="action-card">
-                        <i class="fas fa-list-alt"></i>
-                        <span>View Plans</span>
-                    </a>
-                    <a href="index.html" class="action-card">
-                        <i class="fas fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                </div>
-            </div>
-        </main>
-    </div>
+<!-- Wallet Connect Section -->  
+<div class="wallet-connect-section">  
+<h3><i class="fas fa-wallet"></i> Wallet Connection</h3>  
+<div class="wallet-connect-box">  
+<button onclick="connectWallet()" class="btn btn-primary">  
+<i class="fab fa-bitcoin"></i> Connect BTC Wallet  
+</button>  
+<button onclick="connectTrustWallet()" class="btn btn-secondary">  
+<i class="fas fa-mobile-alt"></i> Trust Wallet  
+</button>  
+<button onclick="connectCoinbaseWallet()" class="btn btn-secondary">  
+<i class="fab fa-bitcoin"></i> Coinbase Wallet  
+</button>  
+</div>  
+<div id="walletInfo" style="display:none; margin-top:20px;">  
+<p>Connected Wallet: <span id="walletAddress"></span></p>  
+<p>Balance: <span id="walletBalance"></span> BTC</p>  
+</div>  
+</div>
 
-    <script>
-    // Check if user is logged in
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    const userEmail = localStorage.getItem('userEmail');
-    
-    if (!isLoggedIn || !userEmail) {
-        alert('Please login to access dashboard');
-        window.location.href = 'login.html';
-    }
+<div class="dashboard-card">  
+<div class="card-header">  
+<h3><i class="fas fa-chart-pie"></i> Active Investments</h3>  
+<a href="deposit.html" class="btn btn-primary">  
+<i class="fas fa-plus"></i> New Investment  
+</a>  
+</div>  
+<div id="investmentsList">  
+<div class="empty-state">  
+<i class="fas fa-inbox"></i>  
+<p>No active investments yet</p>  
+<a href="deposit.html" class="btn btn-primary">Make Your First Deposit</a>  
+</div>  
+</div>  
+</div>
 
-    // Get user data from admin-controlled storage
-    function getUserData(email) {
-        const users = localStorage.getItem('crowdmineUsers');
-        if (!users) return null;
-        
-        const allUsers = JSON.parse(users);
-        return allUsers[email] || null;
-    }
+<div class="quick-actions">  
+<h3>Quick Actions</h3>  
+<div class="actions-grid">  
+<a href="deposit.html" class="action-card">  
+<i class="fas fa-plus-circle"></i>  
+<span>Make Deposit</span>  
+</a>  
+<a href="plans.html" class="action-card">  
+<i class="fas fa-list-alt"></i>  
+<span>View Plans</span>  
+</a>  
+<a href="withdraw.html" class="action-card">  
+<i class="fas fa-hand-holding-usd"></i>  
+<span>Withdraw</span>  
+</a>  
+<a href="contact.html" class="action-card">  
+<i class="fas fa-headset"></i>  
+<span>Contact Support</span>  
+</a>  
+</div>  
+</div>  
+</main>  
+</div>
 
-    // Display user data
-    const userData = getUserData(userEmail);
+<script>  
+const isLoggedIn = localStorage.getItem('isLoggedIn');  
+const userEmail = localStorage.getItem('userEmail');
 
-    if (userData) {
-        // User exists - show their real data
-        document.getElementById('userName').textContent = userData.name;
-        document.getElementById('totalBalance').textContent = '$' + userData.totalBalance.toLocaleString();
-        document.getElementById('totalInvested').textContent = '$' + userData.totalInvested.toLocaleString();
-        document.getElementById('totalProfit').textContent = '$' + userData.totalProfit.toLocaleString();
-        document.getElementById('withdrawable').textContent = '$' + userData.withdrawable.toLocaleString();
-    } else {
-        // New user - show $0.00
-        document.getElementById('userName').textContent = userEmail;
-        document.getElementById('totalBalance').textContent = '$0.00';
-        document.getElementById('totalInvested').textContent = '$0.00';
-        document.getElementById('totalProfit').textContent = '$0.00';
-        document.getElementById('withdrawable').textContent = '$0.00';
-    }
+if (!isLoggedIn || !userEmail) {  
+alert('Please login to access dashboard');  
+window.location.href = 'login.html';  
+}
 
-    function logout() {
-        localStorage.removeItem('isLoggedIn');
-        localStorage.removeItem('userEmail');
-        window.location.href = 'login.html';
-    }
-</script>
-</body>
-</html>
+function getUserData(email) {  
+const users = localStorage.getItem('crowdmineUsers');  
+if (!users) return null;
+
+const allUsers = JSON.parse(users);  
+return allUsers[email] || null;  
+}
+
+const userData = getUserData(userEmail);
+
+if (userData) {  
+document.getElementById('userName').textContent = userData.name;  
+document.getElementById('totalBalance').textContent = '
+
+---
+
+## **7. `deposit.html`** - Deposit Page with Wallet Integration
+
+```html  
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Deposit Funds - Crowdmine Investment</title>  
+<link rel="stylesheet" href="style.css">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+<script src="script.js"></script>  
+</head>  
+<body>  
+<nav class="navbar">  
+<div class="container">  
+<div class="logo">  
+<i class="fas fa-chart-line"></i>  
+<span>Crowdmine Investment</span>  
+</div>  
+<ul class="nav-menu">  
+<li><a href="index.html">Home</a></li>  
+<li><a href="about.html">About</a></li>  
+<li><a href="plans.html">Investment Plans</a></li>  
+<li><a href="deposit.html">Deposit</a></li>  
+<li><a href="contact.html">Contact</a></li>  
+<li><a href="login.html" class="btn-login">Login</a></li>  
+<li><a href="register.html" class="btn-register">Register</a></li>  
+</ul>  
+</div>  
+</nav>
+
+<section class="page-header">  
+<div class="container">  
+<h1><i class="fas fa-wallet"></i> Deposit Cryptocurrency</h1>  
+<p>All deposits go directly to our secure blockchain wallets</p>  
+</div>  
+</section>
+
+<section class="wallet-connect">  
+<div class="container">  
+<h2>Connect Your Wallet</h2>  
+<p>Integrated with Trust Wallet, Coinbase Wallet & WalletConnect</p>  
+<div class="wallet-connect-box">  
+<button onclick="connectTrustWallet()" class="btn btn-primary">  
+<i class="fas fa-mobile-alt"></i> Connect Trust Wallet  
+</button>  
+<button onclick="connectCoinbaseWallet()" class="btn btn-secondary">  
+<i class="fab fa-bitcoin"></i> Connect Coinbase Wallet  
+</button>  
+<button onclick="connectWalletConnect()" class="btn btn-info">  
+<i class="fas fa-link"></i> WalletConnect  
+</button>  
+</div>  
+<div id="walletInfo" style="display:none; margin-top:20px;">  
+<p>Connected Wallet: <span id="walletAddress"></span></p>  
+<p>Balance: <span id="walletBalance"></span> ETH/BTC</p>  
+</div>  
+</div>  
+</section>
+
+<section class="deposit-notice">  
+<div class="container">  
+<div class="notice-box">  
+<i class="fas fa-info-circle"></i>  
+<h3>Important Information</h3>  
+<ul>  
+<li>✅ All deposits processed automatically on blockchain</li>  
+<li>✅ Funds go directly to our secure wallet</li>  
+<li>✅ Investment begins after 1-3 confirmations</li>  
+<li>✅ Submit transaction hash below after depositing</li>  
+<li>⚠️ Send only specified cryptocurrency to each address</li>  
+<li>⚠️ Minimum: $2,500 equivalent</li>  
+</ul>  
+</div>  
+</div>  
+</section>
+
+<section class="crypto-wallets">  
+<div class="container">  
+<h2>Select Cryptocurrency</h2>
+
+<!-- Bitcoin -->  
+<div class="wallet-card">  
+<div class="wallet-header">  
+<i class="fab fa-bitcoin"></i>  
+<h3>Bitcoin (BTC)</h3>  
+</div>  
+<div class="wallet-body">  
+<p class="wallet-label">Deposit Address:</p>  
+<div class="address-container">  
+<code id="btc-addr">bc1qmefkuq5rrf76sc405uwakgz6lt4jz8074v25fx</code>  
+<button onclick="copyAddress('btc-addr')" class="btn-copy">  
+<i class="fas fa-copy"></i> Copy  
+</button>  
+</div>  
+<div class="qr-container">  
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=bc1qmefkuq5rrf76sc405uwakgz6lt4jz8074v25fx" alt="BTC QR">  
+</div>  
+<p class="warning">⚠️ Send only Bitcoin (BTC) to this address</p>  
+</div>  
+</div>
+
+<!-- Ethereum -->  
+<div class="wallet-card">  
+<div class="wallet-header">  
+<i class="fab fa-ethereum"></i>  
+<h3>Ethereum (ETH)</h3>  
+</div>  
+<div class="wallet-body">  
+<p class="wallet-label">Deposit Address:</p>  
+<div class="address-container">  
+<code id="eth-addr">0x08990e9af543f5c93b7dedddf63a02baf7405979</code>  
+<button onclick="copyAddress('eth-addr')" class="btn-copy">  
+<i class="fas fa-copy"></i> Copy  
+</button>  
+</div>  
+<div class="qr-container">  
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0x08990e9af543f5c93b7dedddf63a02baf7405979" alt="ETH QR">  
+</div>  
+<p class="warning">⚠️ Send only Ethereum (ETH) and ERC-20 tokens</p>  
+</div>  
+</div>  
+</section>
+
+<section class="submit-transaction">  
+<div class="container">  
+<h2><i class="fas fa-paper-plane"></i> Submit Your Transaction</h2>  
+<p>After depositing, submit your transaction hash for verification</p>
+
+<form id="txForm" class="transaction-form">  
+<div class="form-group">  
+<label>Cryptocurrency</label>  
+<select id="crypto" required>  
+<option value="">Select...</option>  
+<option value="BTC">Bitcoin (BTC)</option>  
+<option value="ETH">Ethereum (ETH)</option>  
+</select>  
+</div>
+
+<div class="form-group">  
+<label>Transaction Hash / TX ID</label>  
+<input type="text" id="txHash" placeholder="Paste transaction hash" required>  
+</div>
+
+<div class="form-group">  
+<label>Investment Amount</label>  
+<select id="amount" required>  
+<option value="">Select plan amount...</option>  
+<option value="2500">$2,500</option>  
+<option value="5000">$5,000</option>  
+<option value="10000">$10,000</option>  
+<option value="20000">$20,000</option>  
+<option value="50000">$50,000</option>  
+<option value="100000">$100,000</option>  
+</select>  
+</div>
+
+<div class="form-group">  
+<label>Your Email</label>  
+<input type="email" id="email" placeholder="your@email.com" required>  
+</div>
+
+<button type="submit" class="btn btn-primary btn-large">  
+<i class="fas fa-check-circle"></i> Submit Transaction  
+</button>  
+</form>
+
+<div id="result"></div>  
+</div>  
+</section>
+
+<script>  
+function copyAddress(id) {  
+const addr = document.getElementById(id).textContent;  
+navigator.clipboard.writeText(addr).then(() => {  
+alert('Address copied: ' + addr);  
+});  
+}
+
+document.getElementById('txForm').addEventListener('submit', function(e) {  
+e.preventDefault();  
+const crypto = document.getElementById('crypto').value;  
+const txHash = document.getElementById('txHash').value;  
+const amount = document.getElementById('amount').value;  
+const email = document.getElementById('email').value;
+
+// Send email notification (simulated)  
+alert(`Email notification sent to ${email} for deposit confirmation.`);
+
+document.getElementById('result').innerHTML = `  
+<div>  
+<h3>Transaction Submitted Successfully!</h3>  
+<p>We are verifying your transaction.</p>  
+<a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>  
+</div>  
+`;  
+this.reset();  
+});  
+</script>  
+</body>  
+</html>  
